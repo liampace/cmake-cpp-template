@@ -1,7 +1,7 @@
 # Version 1.0.0
 
 ## Library
-- [ ] Build as static library
+- [X] Build as static library
 - [ ] Build as shared library
 - [ ] Build examples programs
 
