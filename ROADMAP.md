@@ -11,7 +11,7 @@
 - [X] CTest integration
 
 ## Documentation
-- [ ] Optional
+- [X] Optional
 - [ ] Generate HTML documentation via Doxygen
 - [ ] Support custom layout files
 
