@@ -2,8 +2,8 @@
 
 ## Library
 - [X] Build as static library
-- [ ] Build as shared library
-- [ ] Build examples programs
+- [X] Build as shared library
+- [X] Build examples programs
 
 ## Tests
 - [ ] Generate executable via GoogleTest

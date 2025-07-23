@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.31)
+
 project("mylibrary" LANGUAGES C CXX)
 set(PROJECT_VERSION_MAJOR 1)
 set(PROJECT_VERSION_MINOR 0)
@@ -7,7 +8,13 @@ set(PROJECT_VERSION "${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PROJECT
 set(PROJECT_DESCRIPTION "A simple CMake library.")
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
-add_library(${PROJECT_NAME} STATIC)
+add_library(${PROJECT_NAME} SHARED)
+
+# Add import/export attributes
+include(GenerateExportHeader)
+generate_export_header(${PROJECT_NAME}
+        EXPORT_FILE_NAME "${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/export.h")
+
 # Add source files
 file(GLOB_RECURSE source_files CONFIGURE_DEPENDS
         # Find platform independent code
@@ -28,3 +35,6 @@ target_sources(${PROJECT_NAME} PUBLIC
         FILES ${header_files})
 target_include_directories(${PROJECT_NAME} PUBLIC "include")
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
+
+add_executable(${PROJECT_NAME}_main "main.cpp")
+target_link_libraries(${PROJECT_NAME}_main PRIVATE ${PROJECT_NAME})
