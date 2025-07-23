@@ -13,6 +13,11 @@ namespace mylibrary
      * @brief Print "Hello World" to the standard output
      */
     MYLIBRARY_EXPORT void printHelloWorld();
+
+    /**
+     * @brief Print the value of the __cplusplus macro to the standard output
+     */
+    MYLIBRARY_EXPORT void printCPlusPlus();
 }
 
 #endif //MYLIBRARY_H

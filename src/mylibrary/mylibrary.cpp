@@ -8,3 +8,7 @@ void mylibrary::printHelloWorld() {
     std::cout << "Hello World!" << std::endl;
 }
 
+void mylibrary::printCPlusPlus() {
+    std::cout << __cplusplus << std::endl;
+}
+
