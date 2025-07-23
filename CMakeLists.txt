@@ -26,6 +26,8 @@ target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
 
 # Add Unit tests
 if (MYLIBRARY_BUILD_TESTS)
+    include(CTest)
+    enable_testing()
     add_subdirectory("tests")
 endif ()
 
