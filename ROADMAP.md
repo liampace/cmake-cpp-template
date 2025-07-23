@@ -25,11 +25,11 @@
   - [ ] Windows
   - [ ] Linux
   - [ ] MacOS
-- [ ] Architectures
-  - [ ] x86
-  - [ ] x86_64
-  - [ ] Arm
-  - [ ] Arm64
+- [X] Architectures
+  - [X] x86
+  - [X] x86_64
+  - [X] Arm
+  - [X] Arm64
 - [X] Build Types
   - [X] Debug
   - [X] Profile
