@@ -6,7 +6,7 @@
 - [X] Build examples programs
 
 ## Tests
-- [ ] Optional
+- [X] Optional
 - [X] Generate executable via GoogleTest
 - [ ] CTest integration
 
