@@ -1,9 +1,9 @@
 # Version 1.0.0
 
 ## Library
-- [ ] Build as static library
-- [ ] Build as shared library
-- [ ] Build examples programs
+- [X] Build as static library
+- [X] Build as shared library
+- [X] Build examples programs
 
 ## Tests
 - [ ] Generate executable via GoogleTest
