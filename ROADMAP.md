@@ -13,7 +13,8 @@
 ## Documentation
 - [X] Optional
 - [X] Generate HTML documentation via Doxygen
-- [ ] Support custom layout files
+- [X] Support custom layout files
+- [X] Support custom pages
 
 ## Installation
 - [ ] Optional
