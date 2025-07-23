@@ -1,4 +1,7 @@
 cmake_minimum_required(VERSION 3.31)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_BINDIR})
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR})
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR})
 
 # Create project
 project("mylibrary" LANGUAGES C CXX)
@@ -24,7 +27,10 @@ add_subdirectory("include")
 add_subdirectory("src")
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
 
-# Add Unit tests
+if (MYLIBRARY_BUILD_EXAMPLES)
+    add_subdirectory("examples")
+endif ()
+
 if (MYLIBRARY_BUILD_TESTS)
     include(CTest)
     enable_testing()
@@ -34,6 +40,3 @@ endif ()
 if (MYLIBRARY_BUILD_DOCS)
     add_subdirectory("docs")
 endif ()
-
-add_executable(${PROJECT_NAME}_main "main.cpp")
-target_link_libraries(${PROJECT_NAME}_main PRIVATE ${PROJECT_NAME})
