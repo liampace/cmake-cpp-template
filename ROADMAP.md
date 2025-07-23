@@ -30,10 +30,10 @@
   - [ ] x86_64
   - [ ] Arm
   - [ ] Arm64
-- [ ] Build Types
-  - [ ] Debug
-  - [ ] Profile
-  - [ ] Release
+- [X] Build Types
+  - [X] Debug
+  - [X] Profile
+  - [X] Release
 
 ## Installation
 - [ ] Optional
