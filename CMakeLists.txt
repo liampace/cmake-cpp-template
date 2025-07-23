@@ -16,6 +16,7 @@ add_subdirectory("include")
 add_subdirectory("src")
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
 
+# Add Unit tests
 add_subdirectory("tests")
 
 add_executable(${PROJECT_NAME}_main "main.cpp")

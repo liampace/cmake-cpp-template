@@ -7,7 +7,7 @@
 
 ## Tests
 - [ ] Optional
-- [ ] Generate executable via GoogleTest
+- [X] Generate executable via GoogleTest
 - [ ] CTest integration
 
 ## Documentation
