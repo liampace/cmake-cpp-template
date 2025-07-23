@@ -9,31 +9,8 @@ set(PROJECT_DESCRIPTION "A simple CMake library.")
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 add_library(${PROJECT_NAME} SHARED)
-
-# Add import/export attributes
-include(GenerateExportHeader)
-generate_export_header(${PROJECT_NAME}
-        EXPORT_FILE_NAME "${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/export.h")
-
-# Add source files
-file(GLOB_RECURSE source_files CONFIGURE_DEPENDS
-        # Find platform independent code
-        "src/${PROJECT_NAME}/*.c"
-        "src/${PROJECT_NAME}/*.cpp"
-        # Find platform dependent code
-        "src/${CMAKE_SYSTEM_NAME}/*.c"
-        "src/${CMAKE_SYSTEM_NAME}/*.cpp")
-target_sources(${PROJECT_NAME} PRIVATE ${source_files})
-
-# Add header files
-file(GLOB_RECURSE header_files CONFIGURE_DEPENDS
-        "include/${PROJECT_NAME}/*.h"
-        "include/${PROJECT_NAME}/*.hpp")
-target_sources(${PROJECT_NAME} PUBLIC
-        FILE_SET ${PROJECT_NAME}_headers
-        TYPE HEADERS
-        FILES ${header_files})
-target_include_directories(${PROJECT_NAME} PUBLIC "include")
+add_subdirectory("include")
+add_subdirectory("src")
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
 
 add_executable(${PROJECT_NAME}_main "main.cpp")
