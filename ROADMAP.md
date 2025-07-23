@@ -3,7 +3,6 @@
 ## Library
 - [X] Build as static library
 - [X] Build as shared library
-- [X] Build examples programs
 
 ## Tests
 - [X] Optional
@@ -15,6 +14,11 @@
 - [X] Generate HTML documentation via Doxygen
 - [X] Support custom layout files
 - [X] Support custom pages
+
+## Examples
+- [ ] Optional
+- [ ] Build executables
+- [ ] Document executables 
 
 ## Installation
 - [ ] Optional
