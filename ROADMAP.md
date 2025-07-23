@@ -6,14 +6,17 @@
 - [X] Build examples programs
 
 ## Tests
+- [ ] Optional
 - [ ] Generate executable via GoogleTest
 - [ ] CTest integration
 
 ## Documentation
+- [ ] Optional
 - [ ] Generate HTML documentation via Doxygen
 - [ ] Support custom layout files
 
 ## Installation
+- [ ] Optional
 - [ ] Generate installation target
 - [ ] Install header files
 - [ ] `find_package` integration
