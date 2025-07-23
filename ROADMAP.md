@@ -16,9 +16,24 @@
 - [X] Support custom pages
 
 ## Examples
-- [ ] Optional
-- [ ] Build executables
-- [ ] Document executables 
+- [X] Optional
+- [X] Build executables
+- [X] Document executables 
+
+## Presets
+- [ ] Systems
+  - [ ] Windows
+  - [ ] Linux
+  - [ ] MacOS
+- [ ] Architectures
+  - [ ] x86
+  - [ ] x86_64
+  - [ ] Arm
+  - [ ] Arm64
+- [ ] Build Types
+  - [ ] Debug
+  - [ ] Profile
+  - [ ] Release
 
 ## Installation
 - [ ] Optional
