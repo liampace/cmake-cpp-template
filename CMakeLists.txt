@@ -31,5 +31,9 @@ if (MYLIBRARY_BUILD_TESTS)
     add_subdirectory("tests")
 endif ()
 
+if (MYLIBRARY_BUILD_DOCS)
+    add_subdirectory("docs")
+endif ()
+
 add_executable(${PROJECT_NAME}_main "main.cpp")
 target_link_libraries(${PROJECT_NAME}_main PRIVATE ${PROJECT_NAME})
