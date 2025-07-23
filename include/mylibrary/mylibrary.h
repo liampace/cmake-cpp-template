@@ -9,6 +9,9 @@
 
 namespace mylibrary
 {
+    /**
+     * @brief Print "Hello World" to the standard output
+     */
     MYLIBRARY_EXPORT void printHelloWorld();
 }
 

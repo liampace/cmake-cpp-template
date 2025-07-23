@@ -12,7 +12,7 @@
 
 ## Documentation
 - [X] Optional
-- [ ] Generate HTML documentation via Doxygen
+- [X] Generate HTML documentation via Doxygen
 - [ ] Support custom layout files
 
 ## Installation
