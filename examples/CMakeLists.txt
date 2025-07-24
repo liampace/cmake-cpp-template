@@ -1,0 +1,7 @@
+file(GLOB example_files CONFIGURE_DEPENDS "*.cpp")
+foreach(example_file IN LISTS example_files)
+    get_filename_component(example_name ${example_file} NAME_WE)
+    set(example_target "${PROJECT_NAME}_${example_name}")
+    add_executable(${example_target} ${example_file})
+    target_link_libraries(${example_target} PRIVATE ${PROJECT_NAME})
+endforeach()
