@@ -22,7 +22,7 @@
 
 ## Presets
 - [ ] Systems
-  - [ ] Windows
+  - [X] Windows
   - [ ] Linux
   - [ ] MacOS
 - [X] Architectures

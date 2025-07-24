@@ -60,6 +60,37 @@
         "value": "arm64",
         "strategy": "external"
       }
-    }
+    },
+    {
+      "name": "windows",
+      "hidden": true,
+      "inherits": "ninja",
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "cl.exe",
+        "CMAKE_CXX_COMPILER": "cl.exe"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
+      },
+      "vendor": {
+        "jetbrains.com/clion": {
+          "toolchain": "Visual Studio"
+        }
+      }
+    },
+    { "name": "debug-windows-x86", "displayName": "Debug (x86)", "inherits": ["debug", "windows", "x86"] },
+    { "name": "debug-windows-x64", "displayName": "Debug (x64)", "inherits": ["debug", "windows", "x64"] },
+    { "name": "debug-windows-arm", "displayName": "Debug (ARM)", "inherits": ["debug", "windows", "arm"] },
+    { "name": "debug-windows-arm64", "displayName": "Debug (ARM64)", "inherits": ["debug", "windows", "arm64"] },
+    { "name": "profile-windows-x86", "displayName": "Debug (x86)", "inherits": ["profile", "windows", "x86"] },
+    { "name": "profile-windows-x64", "displayName": "Debug (x64)", "inherits": ["profile", "windows", "x64"] },
+    { "name": "profile-windows-arm", "displayName": "Debug (ARM)", "inherits": ["profile", "windows", "arm"] },
+    { "name": "profile-windows-arm64", "displayName": "Debug (ARM64)", "inherits": ["profile", "windows", "arm64"] },
+    { "name": "release-windows-x86", "displayName": "Debug (x86)", "inherits": ["release", "windows", "x86"] },
+    { "name": "release-windows-x64", "displayName": "Debug (x64)", "inherits": ["release", "windows", "x64"] },
+    { "name": "release-windows-arm", "displayName": "Debug (ARM)", "inherits": ["release", "windows", "arm"] },
+    { "name": "release-windows-arm64", "displayName": "Debug (ARM64)", "inherits": ["release", "windows", "arm64"] }
   ]
 }
