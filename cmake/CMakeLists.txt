@@ -1,6 +1,10 @@
 include(CMakePackageConfigHelpers)
 set(export_targets_name ${PROJECT_NAME}Targets)
 
+install(DIRECTORY "${PROJECT_BINARY_DIR}/docs/html"
+        DESTINATION ${CMAKE_INSTALL_DOCDIR}
+        OPTIONAL)
+
 install(TARGETS ${PROJECT_NAME}
         EXPORT ${export_targets_name}
         LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}

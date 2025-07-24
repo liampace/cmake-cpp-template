@@ -42,4 +42,5 @@
 - [X] `find_package` integration
   - [X] Install config file
   - [X] Install versioning file
+- [X] Install documentation
 - [ ] CPack integration
