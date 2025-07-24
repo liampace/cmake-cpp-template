@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.31)
+include(GNUInstallDirs)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_BINDIR})
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR})
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR})
@@ -39,4 +40,9 @@ endif ()
 
 if (MYLIBRARY_BUILD_DOCS)
     add_subdirectory("docs")
+endif ()
+
+
+if (MYLIBRARY_INSTALL)
+    add_subdirectory("cmake")
 endif ()

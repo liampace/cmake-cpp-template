@@ -36,10 +36,10 @@
   - [X] Release
 
 ## Installation
-- [ ] Optional
-- [ ] Generate installation target
-- [ ] Install header files
-- [ ] `find_package` integration
-  - [ ] Install config file
-  - [ ] Install versioning file
+- [X] Optional
+- [X] Generate installation target
+- [X] Install header files
+- [X] `find_package` integration
+  - [X] Install config file
+  - [X] Install versioning file
 - [ ] CPack integration
