@@ -1,6 +1,8 @@
 # Add import/export attributes
-include(GenerateExportHeader)
-generate_export_header(${PROJECT_NAME} EXPORT_FILE_NAME "${CMAKE_CURRENT_SOURCE_DIR}/${PROJECT_NAME}/export.h")
+if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+    include(GenerateExportHeader)
+    generate_export_header(${PROJECT_NAME} EXPORT_FILE_NAME "${CMAKE_CURRENT_SOURCE_DIR}/${PROJECT_NAME}/export.h")
+endif ()
 
 # Add header files
 file(GLOB_RECURSE header_files CONFIGURE_DEPENDS

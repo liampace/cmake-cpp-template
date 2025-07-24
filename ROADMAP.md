@@ -21,19 +21,19 @@
 - [X] Document executables 
 
 ## Presets
-- [ ] Systems
-  - [ ] Windows
-  - [ ] Linux
-  - [ ] MacOS
-- [ ] Architectures
-  - [ ] x86
-  - [ ] x86_64
-  - [ ] Arm
-  - [ ] Arm64
-- [ ] Build Types
-  - [ ] Debug
-  - [ ] Profile
-  - [ ] Release
+- [X] Systems
+  - [X] Windows
+  - [X] Linux
+  - [X] MacOS
+- [X] Architectures
+  - [X] x86
+  - [X] x86_64
+  - [X] Arm
+  - [X] Arm64
+- [X] Build Types
+  - [X] Debug
+  - [X] Profile
+  - [X] Release
 
 ## Installation
 - [ ] Optional
