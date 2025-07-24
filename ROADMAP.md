@@ -21,10 +21,10 @@
 - [X] Document executables 
 
 ## Presets
-- [ ] Systems
+- [X] Systems
   - [X] Windows
   - [X] Linux
-  - [ ] MacOS
+  - [X] MacOS
 - [X] Architectures
   - [X] x86
   - [X] x86_64
