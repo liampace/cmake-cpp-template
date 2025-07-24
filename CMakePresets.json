@@ -91,6 +91,36 @@
     { "name": "release-windows-x86", "displayName": "Debug (x86)", "inherits": ["release", "windows", "x86"] },
     { "name": "release-windows-x64", "displayName": "Debug (x64)", "inherits": ["release", "windows", "x64"] },
     { "name": "release-windows-arm", "displayName": "Debug (ARM)", "inherits": ["release", "windows", "arm"] },
-    { "name": "release-windows-arm64", "displayName": "Debug (ARM64)", "inherits": ["release", "windows", "arm64"] }
+    { "name": "release-windows-arm64", "displayName": "Debug (ARM64)", "inherits": ["release", "windows", "arm64"] },
+    {
+      "name": "linux",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "gcc",
+        "CMAKE_CXX_COMPILER": "g++"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Linux"
+      },
+      "vendor": {
+        "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": {
+          "sourceDir": "$env{HOME}/.vs/$ms{projectDirName}"
+        }
+      }
+    },
+    { "name": "debug-linux-x86", "displayName": "Debug (x86)", "inherits": ["debug", "linux", "x86"] },
+    { "name": "debug-linux-x64", "displayName": "Debug (x64)", "inherits": ["debug", "linux", "x64"] },
+    { "name": "debug-linux-arm", "displayName": "Debug (ARM)", "inherits": ["debug", "linux", "arm"] },
+    { "name": "debug-linux-arm64", "displayName": "Debug (ARM64)", "inherits": ["debug", "linux", "arm64"] },
+    { "name": "profile-linux-x86", "displayName": "Debug (x86)", "inherits": ["profile", "linux", "x86"] },
+    { "name": "profile-linux-x64", "displayName": "Debug (x64)", "inherits": ["profile", "linux", "x64"] },
+    { "name": "profile-linux-arm", "displayName": "Debug (ARM)", "inherits": ["profile", "linux", "arm"] },
+    { "name": "profile-linux-arm64", "displayName": "Debug (ARM64)", "inherits": ["profile", "linux", "arm64"] },
+    { "name": "release-linux-x86", "displayName": "Debug (x86)", "inherits": ["release", "linux", "x86"] },
+    { "name": "release-linux-x64", "displayName": "Debug (x64)", "inherits": ["release", "linux", "x64"] },
+    { "name": "release-linux-arm", "displayName": "Debug (ARM)", "inherits": ["release", "linux", "arm"] },
+    { "name": "release-linux-arm64", "displayName": "Debug (ARM64)", "inherits": ["release", "linux", "arm64"] }
   ]
 }
