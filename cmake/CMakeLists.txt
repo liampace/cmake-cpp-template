@@ -1,3 +1,4 @@
+include(GNUInstallDirs)
 include(CMakePackageConfigHelpers)
 set(export_targets_name ${PROJECT_NAME}Targets)
 
