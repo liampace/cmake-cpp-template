@@ -27,7 +27,9 @@ target_compile_options(${PROJECT_NAME} PUBLIC ${MYLIBRARY_CXX_FLAGS})
 target_compile_options(${PROJECT_NAME} PRIVATE ${MYLIBRARY_CXX_WARNING_FLAGS})
 set_target_properties(${PROJECT_NAME} PROPERTIES
         COMPILE_WARNING_AS_ERROR ON
-        LINK_WARNING_AS_ERROR ON)
+        LINK_WARNING_AS_ERROR ON
+        CXX_STANDARD_REQUIRED ON
+        CXX_EXTENSIONS OFF)
 
 if (MYLIBRARY_BUILD_EXAMPLES)
     add_subdirectory("examples")
