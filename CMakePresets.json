@@ -67,7 +67,8 @@
       "inherits": "ninja",
       "cacheVariables": {
         "CMAKE_C_COMPILER": "cl.exe",
-        "CMAKE_CXX_COMPILER": "cl.exe"
+        "CMAKE_CXX_COMPILER": "cl.exe",
+        "MYLIBRARY_CXX_FLAGS": "/permissive- /Zc:__cplusplus /Zc:__STDC__ /Zc:enumTypes /Zc:externConstexpr /Zc:inline /Zc:lambda /Zc:templateScope /Zc:ternary /Zc:throwingNew /Zc:trigraphs"
       },
       "condition": {
         "type": "equals",
