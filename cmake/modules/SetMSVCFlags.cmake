@@ -1,1 +1,12 @@
 set(NEBULA_CXX_COMPILER_FLAGS "")
+macro(AppendFlag flag min max)
+    if (MSVC_VERSION GREATER_EQUAL ${min} AND MSVC_VERSION LESS_EQUAL ${max})
+        list(APPEND NEBULA_CXX_COMPILER_FLAGS ${flag})
+    endif ()
+endmacro()
+
+macro(AppendFlag flag min)
+    if (MSVC_VERSION GREATER_EQUAL ${min})
+        list(APPEND NEBULA_CXX_COMPILER_FLAGS ${flag})
+    endif ()
+endmacro()
