@@ -68,7 +68,8 @@
       "cacheVariables": {
         "CMAKE_C_COMPILER": "cl.exe",
         "CMAKE_CXX_COMPILER": "cl.exe",
-        "MYLIBRARY_CXX_FLAGS": "/permissive- /Zc:__cplusplus /Zc:__STDC__ /Zc:enumTypes /Zc:externConstexpr /Zc:inline /Zc:lambda /Zc:templateScope /Zc:ternary /Zc:throwingNew /Zc:trigraphs"
+        "MYLIBRARY_CXX_FLAGS": "/permissive-;/Zc:__cplusplus;/Zc:__STDC__;/Zc:enumTypes;/Zc:externConstexpr;/Zc:inline;/Zc:lambda;/Zc:templateScope;/Zc:ternary;/Zc:throwingNew;/Zc:trigraphs",
+        "MYLIBRARY_CXX_WARNING_FLAGS": ""
       },
       "condition": {
         "type": "equals",
@@ -94,64 +95,40 @@
     { "name": "release-windows-arm", "displayName": "Debug (ARM)", "inherits": ["release", "windows", "arm"] },
     { "name": "release-windows-arm64", "displayName": "Debug (ARM64)", "inherits": ["release", "windows", "arm64"] },
     {
-      "name": "linux",
+      "name": "unix",
       "hidden": true,
+      "inherits": "ninja",
       "cacheVariables": {
         "CMAKE_C_COMPILER": "gcc",
-        "CMAKE_CXX_COMPILER": "g++"
+        "CMAKE_CXX_COMPILER": "g++",
+        "MYLIBRARY_CXX_FLAGS": "",
+        "MYLIBRARY_CXX_WARNING_FLAGS": "-Wall;-Wextra;-pedantic;-pedantic-errors;-Wconversion;-Wsign-conversion;-Wshadow"
       },
       "condition": {
-        "type": "equals",
-        "lhs": "${hostSystemName}",
-        "rhs": "Linux"
+        "type": "inList",
+        "string": "${hostSystemName}",
+        "list": ["Linux", "Darwin"]
       },
       "vendor": {
+        "jetbrains.com/clion": {
+          "toolchain": "GNU"
+        },
         "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": {
           "sourceDir": "$env{HOME}/.vs/$ms{projectDirName}"
         }
       }
     },
-    { "name": "debug-linux-x86", "displayName": "Debug (x86)", "inherits": ["debug", "linux", "x86"] },
-    { "name": "debug-linux-x64", "displayName": "Debug (x64)", "inherits": ["debug", "linux", "x64"] },
-    { "name": "debug-linux-arm", "displayName": "Debug (ARM)", "inherits": ["debug", "linux", "arm"] },
-    { "name": "debug-linux-arm64", "displayName": "Debug (ARM64)", "inherits": ["debug", "linux", "arm64"] },
-    { "name": "profile-linux-x86", "displayName": "Debug (x86)", "inherits": ["profile", "linux", "x86"] },
-    { "name": "profile-linux-x64", "displayName": "Debug (x64)", "inherits": ["profile", "linux", "x64"] },
-    { "name": "profile-linux-arm", "displayName": "Debug (ARM)", "inherits": ["profile", "linux", "arm"] },
-    { "name": "profile-linux-arm64", "displayName": "Debug (ARM64)", "inherits": ["profile", "linux", "arm64"] },
-    { "name": "release-linux-x86", "displayName": "Debug (x86)", "inherits": ["release", "linux", "x86"] },
-    { "name": "release-linux-x64", "displayName": "Debug (x64)", "inherits": ["release", "linux", "x64"] },
-    { "name": "release-linux-arm", "displayName": "Debug (ARM)", "inherits": ["release", "linux", "arm"] },
-    { "name": "release-linux-arm64", "displayName": "Debug (ARM64)", "inherits": ["release", "linux", "arm64"] },
-    {
-      "name": "macos",
-      "hidden": true,
-      "cacheVariables": {
-        "CMAKE_C_COMPILER": "clang",
-        "CMAKE_CXX_COMPILER": "clang++"
-      },
-      "condition": {
-        "type": "equals",
-        "lhs": "${hostSystemName}",
-        "rhs": "Darwin"
-      },
-      "vendor": {
-        "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": {
-          "sourceDir": "$env{HOME}/.vs/$ms{projectDirName}"
-        }
-      }
-    },
-    { "name": "debug-macos-x86", "displayName": "Debug (x86)", "inherits": ["debug", "macos", "x86"] },
-    { "name": "debug-macos-x64", "displayName": "Debug (x64)", "inherits": ["debug", "macos", "x64"] },
-    { "name": "debug-macos-arm", "displayName": "Debug (ARM)", "inherits": ["debug", "macos", "arm"] },
-    { "name": "debug-macos-arm64", "displayName": "Debug (ARM64)", "inherits": ["debug", "macos", "arm64"] },
-    { "name": "profile-macos-x86", "displayName": "Debug (x86)", "inherits": ["profile", "macos", "x86"] },
-    { "name": "profile-macos-x64", "displayName": "Debug (x64)", "inherits": ["profile", "macos", "x64"] },
-    { "name": "profile-macos-arm", "displayName": "Debug (ARM)", "inherits": ["profile", "macos", "arm"] },
-    { "name": "profile-macos-arm64", "displayName": "Debug (ARM64)", "inherits": ["profile", "macos", "arm64"] },
-    { "name": "release-macos-x86", "displayName": "Debug (x86)", "inherits": ["release", "macos", "x86"] },
-    { "name": "release-macos-x64", "displayName": "Debug (x64)", "inherits": ["release", "macos", "x64"] },
-    { "name": "release-macos-arm", "displayName": "Debug (ARM)", "inherits": ["release", "macos", "arm"] },
-    { "name": "release-macos-arm64", "displayName": "Debug (ARM64)", "inherits": ["release", "macos", "arm64"] }
+    { "name": "debug-unix-x86", "displayName": "Debug (x86)", "inherits": ["debug", "unix", "x86"] },
+    { "name": "debug-unix-x64", "displayName": "Debug (x64)", "inherits": ["debug", "unix", "x64"] },
+    { "name": "debug-unix-arm", "displayName": "Debug (ARM)", "inherits": ["debug", "unix", "arm"] },
+    { "name": "debug-unix-arm64", "displayName": "Debug (ARM64)", "inherits": ["debug", "unix", "arm64"] },
+    { "name": "profile-unix-x86", "displayName": "Debug (x86)", "inherits": ["profile", "unix", "x86"] },
+    { "name": "profile-unix-x64", "displayName": "Debug (x64)", "inherits": ["profile", "unix", "x64"] },
+    { "name": "profile-unix-arm", "displayName": "Debug (ARM)", "inherits": ["profile", "unix", "arm"] },
+    { "name": "profile-unix-arm64", "displayName": "Debug (ARM64)", "inherits": ["profile", "unix", "arm64"] },
+    { "name": "release-unix-x86", "displayName": "Debug (x86)", "inherits": ["release", "unix", "x86"] },
+    { "name": "release-unix-x64", "displayName": "Debug (x64)", "inherits": ["release", "unix", "x64"] },
+    { "name": "release-unix-arm", "displayName": "Debug (ARM)", "inherits": ["release", "unix", "arm"] },
+    { "name": "release-unix-arm64", "displayName": "Debug (ARM64)", "inherits": ["release", "unix", "arm64"] }
   ]
 }

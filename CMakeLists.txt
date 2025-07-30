@@ -24,6 +24,10 @@ add_subdirectory("include")
 add_subdirectory("src")
 target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
 target_compile_options(${PROJECT_NAME} PUBLIC ${MYLIBRARY_CXX_FLAGS})
+target_compile_options(${PROJECT_NAME} PRIVATE ${MYLIBRARY_CXX_WARNING_FLAGS})
+set_target_properties(${PROJECT_NAME} PROPERTIES
+        COMPILE_WARNING_AS_ERROR ON
+        LINK_WARNING_AS_ERROR ON)
 
 if (MYLIBRARY_BUILD_EXAMPLES)
     add_subdirectory("examples")
