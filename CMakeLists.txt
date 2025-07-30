@@ -11,6 +11,9 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 # Add build options to this project.
 string(COMPARE EQUAL "${CMAKE_CURRENT_SOURCE_DIR}" "${CMAKE_SOURCE_DIR}" MYLIBRARY_STANDALONE)
+set(BUILD_SHARED_LIBS OFF)
+
+option(BUILD_SHARED_LIBS "Build shared libraries" ON)
 option(MYLIBRARY_BUILD_EXAMPLES "Build the ${PROJECT_NAME} example programs" ${MYLIBRARY_STANDALONE})
 option(MYLIBRARY_BUILD_TESTS "Build the ${PROJECT_NAME} test programs" ${MYLIBRARY_STANDALONE})
 option(MYLIBRARY_BUILD_DOCS "Build the ${PROJECT_NAME} HTML documentation." ON)
@@ -19,7 +22,13 @@ option(MYLIBRARY_INSTALL "Generate the ${PROJECT_NAME} installation target" ON)
 # Add CMake modules to this project
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules")
 
-add_library(${PROJECT_NAME} SHARED)
+if (${BUILD_SHARED_LIBS})
+    add_library(${PROJECT_NAME} SHARED)
+else ()
+    add_library(${PROJECT_NAME} STATIC)
+    target_compile_definitions(${PROJECT_NAME} PUBLIC "MYLIBRARY_STATIC_DEFINE")
+endif ()
+
 add_subdirectory("include")
 add_subdirectory("src")
 target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
