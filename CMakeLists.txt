@@ -33,12 +33,14 @@ add_subdirectory("include")
 add_subdirectory("src")
 target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
 target_compile_options(${PROJECT_NAME} PUBLIC ${MYLIBRARY_CXX_FLAGS})
-target_compile_options(${PROJECT_NAME} PRIVATE ${MYLIBRARY_CXX_WARNING_FLAGS})
-set_target_properties(${PROJECT_NAME} PROPERTIES
-        COMPILE_WARNING_AS_ERROR ON
-        LINK_WARNING_AS_ERROR ON
-        CXX_STANDARD_REQUIRED ON
-        CXX_EXTENSIONS OFF)
+set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD_REQUIRED ON)
+if (${CMAKE_BUILD_TYPE} STREQUAL "Debug")
+    target_compile_options(${PROJECT_NAME} PRIVATE ${MYLIBRARY_CXX_WARNING_FLAGS})
+    set_target_properties(${PROJECT_NAME} PROPERTIES
+            COMPILE_WARNING_AS_ERROR ON
+            LINK_WARNING_AS_ERROR ON
+            CXX_EXTENSIONS OFF)
+endif ()
 
 if (MYLIBRARY_BUILD_EXAMPLES)
     add_subdirectory("examples")
