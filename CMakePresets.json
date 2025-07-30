@@ -68,7 +68,8 @@
       "cacheVariables": {
         "CMAKE_C_COMPILER": "cl.exe",
         "CMAKE_CXX_COMPILER": "cl.exe",
-        "MYLIBRARY_CXX_FLAGS": "/permissive- /Zc:__cplusplus /Zc:__STDC__ /Zc:enumTypes /Zc:externConstexpr /Zc:inline /Zc:lambda /Zc:templateScope /Zc:ternary /Zc:throwingNew /Zc:trigraphs"
+        "MYLIBRARY_CXX_FLAGS": "/permissive-;/Zc:__cplusplus;/Zc:__STDC__;/Zc:enumTypes;/Zc:externConstexpr;/Zc:inline;/Zc:lambda;/Zc:templateScope;/Zc:ternary;/Zc:throwingNew;/Zc:trigraphs",
+        "MYLIBRARY_CXX_WARNING_FLAGS": ""
       },
       "condition": {
         "type": "equals",
@@ -98,14 +99,19 @@
       "hidden": true,
       "cacheVariables": {
         "CMAKE_C_COMPILER": "gcc",
-        "CMAKE_CXX_COMPILER": "g++"
+        "CMAKE_CXX_COMPILER": "g++",
+        "MYLIBRARY_CXX_FLAGS": "",
+        "MYLIBRARY_CXX_WARNING_FLAGS": "-Wall;-Wextra;-pedantic;-pedantic-errors;-Wconversion;-Wsign-conversion;-Wshadow"
       },
       "condition": {
         "type": "inList",
-        "lhs": "${hostSystemName}",
-        "rhs": ["Linux", "Darwin"]
+        "string": "${hostSystemName}",
+        "list": ["Linux", "Darwin"]
       },
       "vendor": {
+        "jetbrains.com/clion": {
+          "toolchain": "GNU"
+        },
         "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": {
           "sourceDir": "$env{HOME}/.vs/$ms{projectDirName}"
         }
