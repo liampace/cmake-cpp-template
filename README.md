@@ -11,8 +11,11 @@ A C++ project template using CMake
     1. Cloning this repository
     2. Clicking the "Use this template" button
 2. Replace the default `LICENCE` and `README.md` files.
-3. Within the `CMakeLists.txt` files
+3. Rename `mylibraryConfig.cmake.in` to `<project_name>Config.cmake.in` 
+4. Within the `CMakePresets.json` file
+   1. Replace all instances of `MYLIBRARY_*` with `<PROJECT_NAME>_*`
+5. Within the various `CMakeLists.txt` files
     1. Change the default project name (`mylibrary`) to the name of your project
     2. Change the default `CPACK_PACKAGE_VENDOR` to your/your organization's name
     3. Replace all instances of `MYLIBRARY_*` to `<PROJECT_NAME>_*`
-4. Start coding
+6. Start coding
