@@ -4,19 +4,19 @@
 
 ## Features
 - Linux and macOS now unified under `<build_type>-unix-<architecture>` build configurations using the `gcc/g++` compilers
-- Compiler flags now supported via `<PROJECT_NAME>_CXX_FLAGS` and `<PROJECT_NAME>_CXX_WARNING_FLAGS` in `CMakePresets.txt`:
+- Compiler flags now supported via `<PROJECT-NAME>_CXX_FLAGS` and `<PROJECT-NAME>_CXX_WARNING_FLAGS` in `CMakePresets.txt`:
 
 ```json
 {
   ...
   "cacheVariables": {
-    "<PROJECT_NAME>_CXX_FLAGS": "<flag1>;<flag2>;...<flagN>",
-    "<PROJECT_NAME>_CXX_WARNING_FLAGS": "<warning1>;<warning2>;...<warningN>"
+    "<PROJECT-NAME>_CXX_FLAGS": "<flag1>;<flag2>;...<flagN>",
+    "<PROJECT-NAME>_CXX_WARNING_FLAGS": "<warning1>;<warning2>;...<warningN>"
   },
   ...
 }
 ```
-- Debug build type now compiles with warnings as errors. You can set which warnings are enabled with `<PROJECT_NAME>_CXX_WARNING_FLAGS`.
+- Debug build type now compiles with warnings as errors. You can set which warnings are enabled with `<PROJECT-NAME>_CXX_WARNING_FLAGS`.
 - For `MSVC` users, the following flags are applied automatically to enforce C++ standard compliance:
   - `/permissive-`
   - `/Zc:__cplusplus`
