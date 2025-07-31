@@ -1,4 +1,3 @@
-# Add source files
 file(GLOB_RECURSE source_files CONFIGURE_DEPENDS
         # Find platform independent code
         "${PROJECT_NAME}/*.c"
