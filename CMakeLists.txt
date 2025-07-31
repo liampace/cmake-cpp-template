@@ -35,6 +35,8 @@ if (${CMAKE_BUILD_TYPE} STREQUAL "Debug")
             COMPILE_WARNING_AS_ERROR ON
             LINK_WARNING_AS_ERROR ON
             CXX_EXTENSIONS OFF)
+else ()
+    message("Not using these warnings as errors: \"${MYLIBRARY_CXX_WARNING_FLAGS}\"")
 endif ()
 
 if (MYLIBRARY_BUILD_EXAMPLES)
