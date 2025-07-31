@@ -1,8 +1,5 @@
-# Add import/export attributes
 include(GenerateExportHeader)
 generate_export_header(${PROJECT_NAME} EXPORT_FILE_NAME "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}/export.h")
-
-# Add header files
 file(GLOB_RECURSE header_files CONFIGURE_DEPENDS
         "${PROJECT_NAME}/*.h"
         "${PROJECT_NAME}/*.hpp")
