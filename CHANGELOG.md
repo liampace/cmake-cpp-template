@@ -29,4 +29,12 @@
   - `/Zc:ternary`
   - `/Zc:throwingNew`
   - `/Zc:trigraphs`
+- For `GNU` users, the following flags are applied automatically when building with warnings as errors: 
+  - `-Wall`
+  - `-Wextra`
+  - `-pedantic`
+  - `-pedantic-errors`
+  - `-Wconversion`
+  - `-Wsign-conversion`
+  - `-Wshadow`
 - Can now choose to whether to build the project as a static or shared library using the `BUILD_SHARED_LIBS` option. 
